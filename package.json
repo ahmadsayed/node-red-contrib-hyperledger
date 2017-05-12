@@ -1,11 +1,10 @@
 {
   "name": "node-red-contrib-hyperledger",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "node-red-contrib-hyperledger",
   "dependencies": {
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "hfc": "^0.6.5",
     "http": "0.0.0",
     "https": "^1.0.0",
     "util": "^0.10.3"

@@ -1,5 +1,4 @@
 module.exports = function(RED) {
-    var hfc = require('hfc');
 	const https = require('https');
 	const http = require('http');
 	var util = require('util');
