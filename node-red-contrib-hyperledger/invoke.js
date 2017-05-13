@@ -4,9 +4,9 @@ module.exports = function(RED) {
 
     function InvokeNode(config) {
         RED.nodes.createNode(this,config);
-          var node = this;
-		  var str = "";
+          var node = this;		  
           node.on('input', function(msg) {
+			  var str = "";
               var options = {
                   host: msg.peer,
                   port: msg.port,

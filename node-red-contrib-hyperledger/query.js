@@ -6,8 +6,9 @@ module.exports = function(RED) {
     function QueryNode(config) {
         RED.nodes.createNode(this,config);
           var node = this;
-		  var str = "";
           node.on('input', function(msg) {
+	  		  var str = "";
+
               var options = {
                   host: msg.peer,
                   port: msg.port,
