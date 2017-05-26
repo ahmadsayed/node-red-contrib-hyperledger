@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('deploy',{
-        category: 'hyperledger',
+        category: 'hyperledger-fabric',
         color: '#a6bbcf',
         defaults: {
             name: {value:""}
@@ -18,9 +18,30 @@
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
-    </div>
+    </div> 
 </script>
 
 <script type="text/x-red" data-help-name="deploy">
-    <p>A simple node that converts the message payloads into all deploy characters</p>
+    <p>a node to deploy your codechain</p>
+	   <pre>	   
+		msg.peer = '[peer].us.blockchain.ibm.com';
+		msg.port = '[peer port]';
+		msg.payload = 
+		{
+		  "params": {
+			"type": 1,
+			"chaincodeID": {
+			  "path": "https://github.com/[username]/learn-chaincode/finished"
+			},
+			"ctorMsg": {
+			  "function": "init",
+			  "args": [
+				"hi there"
+			  ]
+			},
+			"secureContext": "user_type1_0"
+		  },
+		  "id": 1
+		};
+		</pre>
 </script>

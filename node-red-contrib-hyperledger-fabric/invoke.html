@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('invoke',{
-        category: 'hyperledger',
+        category: 'hyperledger-fabric',
         color: '#a6bbcf',
         defaults: {
             name: {value:""}
@@ -22,5 +22,25 @@
 </script>
 
 <script type="text/x-red" data-help-name="invoke">
-    <p>A simple node that converts the message payloads into all invoke characters</p>
+    <p>A hyperledger-fabric invoke process</p>
+	<pre>
+		msg.peer = '[peer].blockchain.ibm.com';
+		msg.port = '[peer-port]';
+		msg.payload ={
+		  "params": {
+			"type": 1,
+			"chaincodeID": {
+			  "name": "[chain-code-id]"
+			},
+			"ctorMsg": {
+			  "function": "write",
+			  "args": [
+				"key1", "value1"
+			  ]
+			},
+			"secureContext":"user_type1_0"
+		  },
+		  "id": 3
+		};
+	</pre>
 </script>

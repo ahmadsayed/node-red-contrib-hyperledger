@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('enroll',{
-        category: 'hyperledger',
+        category: 'hyperledger-fabric',
         color: '#a6bbcf',
         defaults: {
             name: {value:""}
@@ -21,6 +21,12 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="enroll">
-    <p>A simple node that converts the message payloads into all enroll characters</p>
+<script type="text/x-red" data-help-name="enroll">    
+	<p>Enroll existing user</p>
+		<pre>
+			msg.payload = {"enrollId": "admin", "enrollSecret":"[your-secret]"};
+			msg.peer = '[peer].blockchain.ibm.com';
+			msg.port = '[peer-port]';
+		</pre>
+	
 </script>

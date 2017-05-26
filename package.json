@@ -1,7 +1,7 @@
 {
-  "name": "node-red-contrib-hyperledger",
-  "version": "0.0.4",
-  "description": "node-red-contrib-hyperledger",
+  "name": "node-red-contrib-hyperledger-fabric",
+  "version": "0.0.5",
+  "description": "node-red-contrib-hyperledger-fabric",
   "dependencies": {
     "ejs": "^2.5.6",
     "express": "^4.15.2",
@@ -14,10 +14,10 @@
   ],
   "node-red": {
     "nodes": {
-      "hfc-deploy": "node-red-contrib-hyperledger/deploy.js",
-      "hfc-enroll": "node-red-contrib-hyperledger/enroll.js",
-      "hfc-invoke": "node-red-contrib-hyperledger/invoke.js",
-      "hfc-query": "node-red-contrib-hyperledger/query.js"
+      "hfc-deploy": "node-red-contrib-hyperledger-fabric/deploy.js",
+      "hfc-enroll": "node-red-contrib-hyperledger-fabric/enroll.js",
+      "hfc-invoke": "node-red-contrib-hyperledger-fabric/invoke.js",
+      "hfc-query": "node-red-contrib-hyperledger-fabric/query.js"
     }
   }
 }
