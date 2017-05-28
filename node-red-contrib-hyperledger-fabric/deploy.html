@@ -1,13 +1,12 @@
 <script type="text/javascript">
     RED.nodes.registerType('deploy',{
-        category: 'hyperledger-fabric',
-        color: '#a6bbcf',
+        category: 'config',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+			url: {value:""},
+			port: {value:""},
+			chaincodeID: {value:""}
         },
-        inputs:1,
-        outputs:1,
-        icon: "file.png",
         label: function() {
             return this.name||"deploy";
         }
@@ -18,6 +17,17 @@
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+		<br/>
+        <label for="node-input-host"><i class="icon-tag"></i> Peer host</label>
+        <input type="text" id="node-input-host" placeholder="[peer].blockchain.ibm.com">
+		<br/>
+        <label for="node-input-port"><i class="icon-tag"></i> Peer port</label>
+        <input type="text" id="node-input-port" placeholder="[peer-port]">
+		<br/>
+        <label for="node-config-input-chaincodeID"><i class="icon-tag"></i> Chain code</label>
+        <input type="text" id="node-config-input-chaincodeID" placeholder="https://github.com/[username]/learn-chaincode/finished">
+		<br/>
+		
     </div> 
 </script>
 

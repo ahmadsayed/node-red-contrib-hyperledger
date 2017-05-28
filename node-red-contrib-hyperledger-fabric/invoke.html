@@ -3,11 +3,14 @@
         category: 'hyperledger-fabric',
         color: '#a6bbcf',
         defaults: {
-            name: {value:""}
+			chaincodeID: {value:"", type:"deploy"},
+            name: {value:""},
+			url: {value:""},
+			port: {value:""}			
         },
         inputs:1,
         outputs:1,
-        icon: "file.png",
+        icon: "blockchain.jpg",
         label: function() {
             return this.name||"invoke";
         }
@@ -16,8 +19,19 @@
 
 <script type="text/x-red" data-template-name="invoke">
     <div class="form-row">
+        <label for="node-input-chaincodeID"><i class="icon-tag"></i> Chaincode</label>
+        <input type="select" id="node-input-chaincodeID" placeholder="Chaincode">
+		<br/>
+		<br/>
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+		<br/>
+        <label for="node-input-url"><i class="icon-tag"></i> Peer</label>
+        <input type="text" id="node-input-url" placeholder="[peer].blockchain.ibm.com">
+		<br/>
+        <label for="node-input-port"><i class="icon-tag"></i> Peer port</label>
+        <input type="text" id="node-input-port" placeholder="[peer-port]">		
+		<br/>
     </div>
 </script>
 

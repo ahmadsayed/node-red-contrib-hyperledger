@@ -8,10 +8,22 @@
           var node = this;
 		  var str = "";
           node.on('input', function(msg) {
-			  var str = "";
+			  var str = ""
+			  var host = "";
+			  var port = 0;
+			  if (typeof msg.peer == 'undefined') {
+				  host = node.host;
+			  } else {
+				  host = msg.peer;
+			  }
+			  if (typeof msg.port == 'undefined') {
+				  port = node.port;
+			  } else {
+				  port = msg.port;
+			  }
               var options = {
-                  host: msg.peer,
-                  port: msg.port,
+                  host: host,
+                  port: port,
                   path: '/registrar',
                   method: 'POST',
 				  headers: {
