@@ -23,7 +23,7 @@ module.exports = function(RED) {
 			  var jsonDeployRequest = 
 			  {
 			  "jsonrpc": "2.0",
-			  "method" : "deploy"
+			  "method" : "deploy",
 			  "params": {
 				"type": 1,
 				"chaincodeID": {

@@ -1,15 +1,13 @@
 <script type="text/javascript">
     RED.nodes.registerType('enroll',{
-        category: 'hyperledger-fabric',
-        color: '#a6bbcf',
+        category: 'config',
         defaults: {
             name: {value:""},
 			url: {value:""},
-			port: {value:""}
+			port: {value:""},
+			username: {value:""},
+			password: {value:""}
         },
-        inputs:1,
-        outputs:1,
-        icon: "blockchain.jpg",
         label: function() {
             return this.name||"enroll";
         }
