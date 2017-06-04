@@ -5,11 +5,11 @@
             name: {value:""},
 			url: {value:""},
 			port: {value:""},
-			username: {value:""},
-			password: {value:""}
+			enrollId: {value:""},
+			enrollSecret: {value:""}
         },
         label: function() {
-            return this.name||"enroll";
+            return this.enrollId||"enrollId";
         }
     });
 </script>
@@ -25,6 +25,12 @@
         <label for="node-input-port"><i class="icon-tag"></i> Peer port</label>
         <input type="text" id="node-input-port" placeholder="[peer-port]">		
 		<br/>
+        <label for="node-config-input-enrollId"><i class="icon-tag"></i> Enroll ID</label>
+        <input type="text" id="node-config-input-enrollId" placeholder="[username]">
+        <br/>
+        <label for="node-config-input-enrollSecret"><i class="icon-tag"></i>Enroll secret</label>
+        <input type="password" id="node-config-input-enrollSecret">
+        
     </div>
 </script>
 

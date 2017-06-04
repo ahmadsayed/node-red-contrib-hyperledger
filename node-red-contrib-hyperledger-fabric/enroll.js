@@ -7,10 +7,11 @@
           RED.nodes.createNode(this, config);
           var node = this;
 		  var str = "";
-          node.on('input', function(msg) {
+          node.on('deploy', function(msg) {
 			  var str = ""
 			  var host = "";
 			  var port = 0;
+              var enrollment_data = {"enrollId": node.enrollId, "enrollSecret":node.enrollSecret};
 			  if (typeof msg.peer == 'undefined') {
 				  host = node.host;
 			  } else {
@@ -29,7 +30,7 @@
 				  headers: {
 					"content-type": "application/json",
 				},
-				json: msg.payload
+				json: enrollment_data
               };
 
               var req = https.request(options, function(res) {
@@ -38,9 +39,8 @@
 					  str += body;
                   });
 
-                  res.on('end', function() {
-                      msg.payload= str;
-   	                  node.send(msg);
+                  res.on('end', function() {                      
+   	                  node.log(str);
 
                   });
               });
